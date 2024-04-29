@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             <div className={styles.cardText}>
               <h2 className={styles.gradientText1}>Portal ➜</h2>
               <p>
-                Guides, references, and resources that will help you build with
+                Changes, references, and resources that will help you build with
                 thirdweb.
               </p>
             </div>
