@@ -12,15 +12,16 @@ const InputComponent: React.FC<InputComponentProps> = ({
   value,
   setValue,
 }) => (
-  <div className="flex bg-[#2b3655] rounded-2xl items-left flex-col flex-grow pt-6 mb-4">
+  <div className="flex bg-[#2b3655] rounded-2xl items-left flex-col flex-grow pt-6">
     <div className="mb-6">
       <h1 className="mb-2 ml-3">{label}</h1>
       <input
         type="number"
-        value={value.toString()}
+        value={value}
         onChange={(e) => {
           const newValue = parseFloat(e.target.value); // Convert the input value to a floating number
-          if (!isNaN(newValue)) { // Check if the parsed value is a valid number
+          if (!isNaN(newValue)) {
+            // Check if the parsed value is a valid number
             setValue(newValue);
           } else {
             setValue(0); // Reset or handle invalid number input, you could also use '' to clear the field
@@ -33,10 +34,9 @@ const InputComponent: React.FC<InputComponentProps> = ({
   </div>
 );
 
-const Home: React.FC = () => {
-  const [vUSDC, setVUSDC] = useState<number>(0);
-  const [vTTD, setVTTD] = useState<number>(0);
-  const [vRT, setVRT] = useState<number>(0);
+export default function Virtualizer() {
+  const [vUSD, setVUSD] = useState<number>(0);
+  const [USDC, setUSDC] = useState<number>(0);
   const [swap, setSwap] = useState<boolean>(false);
 
   const handleSwap = () => {
@@ -47,18 +47,9 @@ const Home: React.FC = () => {
     <div className="bg-[#2b3655] flex items-center flex-col flex-grow pt-6 lg:pt-12 h-screen">
       <Card className="p-2 max-w-sm mx-auto rounded-3xl lg:mt-0 mt-14 bg-neutral">
         <div className="justify-center flex flex-col mb-4">
-          <div className="ml-3 text-2xl my-3">
-            <div className="flex flex-row whitespace-nowrap">
-              <h1>Balance: </h1>
-              <div className="pb-1 ml-2 inline-flex items-center justify-center">
-                1000 vUSD
-              </div>
-            </div>
-          </div>
-
           {swap ? (
             <>
-              <InputComponent label="vUSDC" value={vUSDC} setValue={setVUSDC} />
+              <InputComponent label="USDC" value={USDC} setValue={setUSDC} />
               <div className="my-4 justify-center flex">
                 <button className="btn btn-accent" onClick={handleSwap}>
                   <svg
@@ -77,13 +68,11 @@ const Home: React.FC = () => {
                   </svg>
                 </button>
               </div>
-              <InputComponent label="vTTD" value={vTTD} setValue={setVTTD} />
-              <InputComponent label="vRT" value={vRT} setValue={setVRT} />
+              <InputComponent label="vUSD" value={vUSD} setValue={setVUSD} />
             </>
           ) : (
             <>
-              <InputComponent label="vTTD" value={vTTD} setValue={setVTTD} />
-              <InputComponent label="vRT" value={vRT} setValue={setVRT} />
+              <InputComponent label="vUSD" value={vUSD} setValue={setVUSD} />
               <div className="my-4 justify-center flex">
                 <button className="btn btn-accent" onClick={handleSwap}>
                   <svg
@@ -102,15 +91,12 @@ const Home: React.FC = () => {
                   </svg>
                 </button>
               </div>
-              <InputComponent label="vUSDC" value={vUSDC} setValue={setVUSDC} />
+              <InputComponent label="USDC" value={USDC} setValue={setUSDC} />
             </>
           )}
-
-          <button className="btn btn-primary text-lg my-4">Convert</button>
+          <button className="flex btn btn-primary text-lg mt-4">Convert</button>
         </div>
       </Card>
     </div>
   );
-};
-
-export default Home;
+}
