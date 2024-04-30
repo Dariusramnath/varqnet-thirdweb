@@ -13,6 +13,7 @@
   "dependencies": {
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
+    "@tremor/react": "^3.16.2",
     "ethers": "^5",
     "next": "^13",
     "react": "^18.2",
@@ -22,6 +23,7 @@
     "@types/node": "^18.11.11",
     "@types/react": "^18",
     "autoprefixer": "^10.4.19",
+    "daisyui": "^4.10.2",
     "eslint": "^8.29.0",
     "eslint-config-next": "^13",
     "postcss": "^8.4.38",
