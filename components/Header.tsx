@@ -33,7 +33,7 @@ export function Header() {
                 VARQ
               </Link>
               <Link
-                href="/"
+                href="/amm"
                 className="hidden px-4 py-5 aria-[current=page]:pointer-events-none sm:block"
               >
                 AMM
