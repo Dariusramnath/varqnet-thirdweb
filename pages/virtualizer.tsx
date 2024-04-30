@@ -34,7 +34,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
   </div>
 );
 
-export default function virtualizer() {
+export default function Virtualizer() {
   const [vUSD, setVUSD] = useState<number>(0);
   const [USDC, setUSDC] = useState<number>(0);
   const [swap, setSwap] = useState<boolean>(false);
