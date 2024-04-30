@@ -44,6 +44,12 @@ export function Header() {
               >
                 VEX
               </Link>
+              <Link
+                href="/virtualizer"
+                className="hidden px-4 py-5 text-cobalt aria-[current=page]:pointer-events-none sm:block"
+              >
+                Virtualizer
+              </Link>
             </React.Fragment>
           </div>
           <input
