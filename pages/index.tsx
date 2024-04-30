@@ -12,11 +12,10 @@ const Home: NextPage = () => {
             Welcome to{" "}
             <span className={styles.gradientText0}>
               <a
-                href="https://thirdweb.com/"
-                target="_blank"
+                href="/amm"
                 rel="noopener noreferrer"
               >
-                thirdweb.
+                AMM PAGE
               </a>
             </span>
           </h1>
@@ -55,7 +54,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://thirdweb.com/dashboard"
+            href={"https://thirdweb.com/dashboard"}
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
