@@ -16,7 +16,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
     <div className="mb-6">
       <h1 className="mb-2 ml-3">{label}</h1>
       <input
-        type="text"
+        type="number"
         value={value}
         onChange={(e) => {
           const newValue = parseFloat(e.target.value); // Convert the input value to a floating number
